@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:new, :create] # Allow non-authenticated users to access registration
+  before_action :authenticate_user!, except: %i[new create] # Allow non-authenticated users to access registration
 
   def new
     @user = User.new
