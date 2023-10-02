@@ -23,11 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: budget_app
-  username: postgres
-  password: gardy
-  port: 5433
-  localhost: localhost
+  database: eutifhns
+  password: M_q7MxH74E2NwEImb4sbKLiOy5Cmr1fF
+  url: postgres://eutifhns:M_q7MxH74E2NwEImb4sbKLiOy5Cmr1fF@mahmud.db.elephantsql.com/eutifhns
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,11 +59,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: budget_app
-  username: postgres
-  password: gardy
-  port: 5433
-  localhost: localhost
+  database: eutifhns
+  password: M_q7MxH74E2NwEImb4sbKLiOy5Cmr1fF
+  url: postgres://eutifhns:M_q7MxH74E2NwEImb4sbKLiOy5Cmr1fF@mahmud.db.elephantsql.com/eutifhns
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -89,8 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: budget_app
-  username: postgres
-  password: gardy
-  port: 5433
-  localhost: localhost
+  database: eutifhns
+  password: M_q7MxH74E2NwEImb4sbKLiOy5Cmr1fF
+  url: postgres://eutifhns:M_q7MxH74E2NwEImb4sbKLiOy5Cmr1fF@mahmud.db.elephantsql.com/eutifhns
