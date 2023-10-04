@@ -2,7 +2,13 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @categories = current_user.categories.includes(:transactions)
+	@categories = current_user.categories.includes(:transactions)
+	@total_amounts = {}
+	
+	@categories.each do |category|
+	  total_amount = category.transactions.sum(:amount)
+	  @total_amounts[category.id] = total_amount
+	end
   end
 
   def show
