@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_category, only: [:index, :new, :create]
+  before_action :find_category, only: %i[index new create]
 
   def index
     @transactions = @category.transactions.order(created_at: :desc)
