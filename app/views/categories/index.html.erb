@@ -3,7 +3,7 @@
   <% @categories.each do |category| %>
     <li>
       <%= link_to category.name, category_path(category) %>
-      - Total Amount: <%= number_to_currency(@total_amount) %>
+      - Total Amount: <%= number_to_currency(@total_amounts[category.id]) %>
     </li>
   <% end %>
 </ul>
