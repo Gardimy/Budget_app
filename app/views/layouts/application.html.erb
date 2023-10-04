@@ -11,6 +11,11 @@
   </head>
 
   <body>
+  <% if user_signed_in? %>
+        <ul>
+        <li class="sign_out"><%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %></li>
+      </ul>
+<% end %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
     <%= yield %>
