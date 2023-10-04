@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 	devise_for :users
   # Redirect authenticated users to the categories#index page
+  devise_scope :user do
+    get "/custom_sign_out" => "devise/sessions#destroy", as: :custom_destroy_user_session
+  end
+
   authenticated :user do
     root 'categories#index', as: :authenticated_root
   end
@@ -11,6 +15,4 @@ Rails.application.routes.draw do
   resources :categories do
     resources :transactions
   end
-
-  # Add other custom routes as needed
 end
