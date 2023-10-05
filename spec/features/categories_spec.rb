@@ -1,5 +1,3 @@
-# spec/features/categories_spec.rb
-
 require 'rails_helper'
 
 RSpec.describe 'Categories', type: :feature do
@@ -14,6 +12,18 @@ RSpec.describe 'Categories', type: :feature do
   before(:each) do
     allow_any_instance_of(User).to receive(:confirmed?).and_return(true)
     sign_in user
+  end
+
+  describe 'Category New Page' do
+    it 'allows the user to create a new category' do
+      visit new_category_path
+
+      fill_in 'Name', with: 'Books'
+      select 'Education', from: 'category_icon'
+      click_button 'Save'
+
+      expect(page).to have_content("Category 'Books' was successfully created.")
+    end
   end
 
   describe 'Category New Page' do
