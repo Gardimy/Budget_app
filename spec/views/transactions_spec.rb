@@ -18,7 +18,7 @@ RSpec.describe TransactionsController, type: :controller do
     Category.create(
       name: 'Education',
       icon: 'imgexample.png',
-      user: user
+      user:
     )
   end
 
@@ -55,9 +55,9 @@ RSpec.describe TransactionsController, type: :controller do
     end
 
     it 'creates a new transaction' do
-      expect {
+      expect do
         post :create, params: { category_id: category.id, transaction: transaction_attributes }
-      }.to change(Transaction, :count).by(1)
+      end.to change(Transaction, :count).by(1)
     end
 
     it 'redirects to the index page after creating a new transaction' do

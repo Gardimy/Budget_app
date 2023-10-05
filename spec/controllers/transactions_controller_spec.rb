@@ -69,5 +69,6 @@ RSpec.describe TransactionsController, type: :controller do
       # Invalid transaction attributes to simulate a failure
       invalid_attributes = transaction_attributes.merge(amount: nil)
       post :create, params: { category_id: category.id, transaction: invalid_attributes }
+    end
   end
 end
