@@ -69,9 +69,5 @@ RSpec.describe TransactionsController, type: :controller do
       # Invalid transaction attributes to simulate a failure
       invalid_attributes = transaction_attributes.merge(amount: nil)
       post :create, params: { category_id: category.id, transaction: invalid_attributes }
-      # The lines below are removed as you requested
-      # expect(response).to have_http_status(:success)
-      # expect(response).to render_template(:new)
-    end
   end
 end
