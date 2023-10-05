@@ -18,7 +18,7 @@ RSpec.describe TransactionsController, type: :controller do
     Category.create(
       name: 'Education',
       icon: 'imgexample.png',
-      user:
+      user: user
     )
   end
 
@@ -55,9 +55,9 @@ RSpec.describe TransactionsController, type: :controller do
     end
 
     it 'creates a new transaction' do
-      expect do
+      expect {
         post :create, params: { category_id: category.id, transaction: transaction_attributes }
-      end.to change(Transaction, :count).by(1)
+      }.to change(Transaction, :count).by(1)
     end
 
     it 'redirects to the index page after creating a new transaction' do
@@ -66,6 +66,7 @@ RSpec.describe TransactionsController, type: :controller do
     end
 
     it 're-renders the new template if transaction creation fails' do
+      # Invalid transaction attributes to simulate a failure
       invalid_attributes = transaction_attributes.merge(amount: nil)
       post :create, params: { category_id: category.id, transaction: invalid_attributes }
     end
