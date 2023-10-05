@@ -1,8 +1,12 @@
 <h1><%= @category.name %> Transactions</h1>
+<% if @category.icon.present? %>
+  <%= image_tag @category.icon, alt: "Category icon" %>
+<% end %>
 <p>Total Amount: <%= number_to_currency(@total_amount) %></p>
 <ul>
   <% @transactions.each do |transaction| %>
-    <li><%= transaction.name %> - Amount: <%= number_to_currency(transaction.amount) %></li>
+    <li>Transaction Date: <%= transaction.created_at %><br>
+	<%= transaction.name %> - Amount: <%= number_to_currency(transaction.amount) %></li>
   <% end %>
 </ul>
 <%= link_to 'Add a new transaction', new_category_transaction_path(@category) %>
