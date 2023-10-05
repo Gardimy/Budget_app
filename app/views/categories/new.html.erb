@@ -6,9 +6,31 @@
     <%= f.text_field :name, required: true %>
   </div>
 
+  <% icon_options = [
+    ['Economy', image_path('Economy.png')],
+    ['Computing', image_path('Computing.png')],
+    ['Technology', image_path('Technology.png')],
+    ['Transportation', image_path('Transportation.png')],
+    ['Education', image_path('Education.png')],
+    ['Agriculture', image_path('Agriculture.png')],
+    ['Books', image_path('Books.png')],
+    ['Politics', image_path('Politics.png')],
+    ['Motocicle', image_path('Motocicle.png')],
+    ['CleaningS', image_path('CleaningS.png')],
+  ] %>
+
   <div class="field">
     <%= f.label :icon %>
-    <%= f.text_field :icon, required: true %>
+    <%= f.select :icon, options_for_select(icon_options), prompt: "Choose Category", id: "icon-select" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :selected_icon, "Selected Icon" %>
+    <% if @category.icon.present? %>
+      <%= image_tag @category.icon, alt: "Selected icon" %>
+    <% else %>
+      <p>No icon selected</p>
+    <% end %>
   </div>
 
   <%= f.submit 'Save' %>
