@@ -34,8 +34,10 @@ RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.include Devise::Test::ControllerHelpers, type: :controller # Include for controller specs
+  config.include Devise::Test::IntegrationHelpers, type: :feature # Include for feature specs
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
+  config.include FactoryBot::Syntax::Methods # Include for model specs
   # instead of true.
   config.use_transactional_fixtures = true
 
