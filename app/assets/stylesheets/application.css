@@ -234,7 +234,7 @@ input[type="submit"]:hover {
   align-items: center;
 }
 
-.category-header img {
+.category-header1 img {
   max-width: 100px;
   max-height: 100px;
   margin-right: 10px;
@@ -299,6 +299,63 @@ input[type="submit"]:hover {
   padding: 10px 20px;
   border-radius: 5px;
   margin-top: 20px;
+  display: inline-block;
+}
+
+/* transactions.css */
+.transaction-details-container {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.transaction-details-header {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+}
+
+.total-amount {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.transaction-list {
+  list-style: none;
+  padding: 0;
+}
+
+.transaction-item {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-info {
+  flex-grow: 1;
+}
+
+.transaction-meta {
+  text-align: right;
+}
+
+.add-transaction-link {
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 10px;
   display: inline-block;
 }
 

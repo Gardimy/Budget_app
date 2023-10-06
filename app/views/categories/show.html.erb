@@ -1,5 +1,5 @@
-<div class="transactions-container1">
-  <h1 class="category-header1">
+<div class="transactions-container">
+  <h1 class="category-header">
     <% if @category.icon.present? %>
       <%= image_tag @category.icon, alt: "Category icon" %>
     <% end %>
@@ -8,7 +8,7 @@
   
   <ul>
     <% @transactions.each do |transaction| %>
-      <li class="transaction-item1">
+      <li class="transaction-item">
         <div>
           <%= transaction.name %> - Amount: <%= number_to_currency(transaction.amount) %>
         </div>
