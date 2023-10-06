@@ -1,9 +1,34 @@
-<h1><%= @category.name %> Transactions</h1>
-<p>Total Amount: <%= number_to_currency(@total_amount) %></p>
-<ul>
-  <% @transactions.each do |transaction| %>
-    <li><%= transaction.name %> - Amount: <%= number_to_currency(transaction.amount) %></li>
-  <% end %>
-</ul>
-<%= link_to 'Add a new transaction', new_category_transaction_path(@category) %>
-<%= link_to 'Back', categories_path %>
+<div class="transactions-container">
+  <h1 class="category-header">
+    <% if @category.icon.present? %>
+      <%= image_tag @category.icon, alt: "Category icon" %>
+    <% end %>
+    <%= @category.name %>
+  </h1>
+  
+  <ul>
+    <% @transactions.each do |transaction| %>
+      <li class="transaction-item">
+        <div>
+          <%= transaction.name %> - Amount: <%= number_to_currency(transaction.amount) %>
+        </div>
+		<div>
+		Transaction ID: <%= transaction.id %>
+	  </div>
+        <div class="transaction-date">
+          Transaction Date: <%= transaction.created_at %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<div class="total-amount">
+  <div class="total">
+  <p>Total Amount:
+  </div>
+  <div class="amount">
+   <%= number_to_currency(@total_amount) %></p>
+</div>
+</div>
+  <%= link_to 'Add a new transaction', new_category_transaction_path(@category), class: 'new-category-button' %>
+  <%= link_to 'Back', categories_path, class: 'back-link' %>
+</div>

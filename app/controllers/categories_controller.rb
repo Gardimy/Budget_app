@@ -24,9 +24,20 @@ class CategoriesController < ApplicationController
   def create
     @category = current_user.categories.build(category_params)
     if @category.save
-      redirect_to categories_path, notice: 'Category was successfully created.'
+      redirect_to categories_path, notice: "Category '#{@category.name}' was successfully created."
     else
       render :new
+    end
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+
+    if current_user == @category.user
+      @category.destroy
+      redirect_to categories_path, notice: 'Category was successfully deleted.'
+    else
+      redirect_to categories_path, alert: 'You are not authorized to delete this category.'
     end
   end
 
