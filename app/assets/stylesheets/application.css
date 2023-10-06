@@ -1,7 +1,6 @@
-/* Add this CSS to your application.css or a custom stylesheet */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0; /* Background color for the entire body */
+  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
 }
@@ -180,4 +179,84 @@ form .links {
 
 .new-category-button:hover {
   background-color: #0056b3;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+#icon-select {
+  width: 100%;
+  padding: 10px;
+}
+
+#selected_icon {
+  margin-top: 10px;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* transactions.css */
+.transactions-container {
+  background-color: #fff;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+}
+
+.category-header img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 10px;
+}
+
+.transaction-item {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 10px;
+  list-style: none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.total-amount {
+  font-weight: bold;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount {
+  font-weight: bold;
+  margin-top: 15px;
 }
