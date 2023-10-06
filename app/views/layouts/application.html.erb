@@ -11,13 +11,18 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <nav>
         <ul>
-        <li class="sign_out"><%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %></li>
-      </ul>
-<% end %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+          <li class="sign_out"><%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    <% end %>
+    <div class="header">
+  <h1>Categories</h1>
+</div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

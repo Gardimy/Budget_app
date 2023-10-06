@@ -1,3 +1,33 @@
+/* Add this CSS to your application.css or a custom stylesheet */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Background color for the entire body */
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #007BFF;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: bisque;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .form-container {
   max-width: 400px;
   margin: 0 auto;
@@ -84,9 +114,10 @@ form .links {
 }
 
 .header {
-  background-color: blue;
+  background-color: #007BFF;
+  color: white;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .categories-container {
@@ -124,6 +155,7 @@ form .links {
 .category-details h2 {
   margin: 0;
   color: blueviolet;
+  text-decoration: none;
 }
 
 .category-actions {
