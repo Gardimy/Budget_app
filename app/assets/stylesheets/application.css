@@ -192,7 +192,8 @@ form .links {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin: 20px auto;
-  /*display: block;*/
+
+  /* display: block; */
   text-align: center;
 }
 
@@ -219,9 +220,10 @@ h1 {
 }
 
 /* Style the submit button */
-/*input[type="submit"]:hover {
+
+/* input[type="submit"]:hover {
   background-color: #0056b3;
-}*/
+} */
 
 /* transactions.css */
 .transactions-container {
