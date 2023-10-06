@@ -27,9 +27,8 @@
   <div class="field">
     <%= f.label :selected_icon, "Selected Icon" %>
     <% if @category.icon.present? %>
-      <%= image_tag @category.icon, alt: "Selected icon" %>
+      <%= image_tag @category.icon %>
     <% else %>
-      <p>No icon selected</p>
     <% end %>
   </div>
 

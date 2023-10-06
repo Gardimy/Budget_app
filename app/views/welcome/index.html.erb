@@ -1,3 +1,24 @@
-<h1>Welcome to GDM Budget_Smart</h1>
-<%= link_to 'Sign Up', new_user_registration_path %>
-<%= link_to 'Log In', new_user_session_path %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to GDM Budget_Smart</title>
+</head>
+<body style="background-color: lightblue; font-family: Arial, sans-serif; text-align: center; padding: 20px;">
+
+  <header style="background-color: #007BFF; color: white; padding: 20px;">
+    <h1>Welcome to GDM Budget_Smart</h1>
+  </header>
+
+  <div style="background-color: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    <p style="font-size: 18px;">GDM Budget_Smart is a web application where you can manage your budget.
+      You have a list of transactions associated with a category,
+      so that you can see how much money you spent and on what.</p>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <%= link_to 'Sign Up', new_user_registration_path, style: 'background-color: #007BFF; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;' %>
+    <%= link_to 'Log In', new_user_session_path, style: 'background-color: #333; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-left: 10px;' %>
+  </div>
+
+</body>
+</html>
