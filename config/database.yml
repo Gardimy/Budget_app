@@ -89,8 +89,4 @@ test:
 #
 production:
   <<: *default
-  database: budget_app
-  username: postgres
-  password: gardy
-  port: 5433
-  localhost: localhost
+  url: <%= ENV['DATABASE_URL'] %>
