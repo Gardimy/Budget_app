@@ -260,3 +260,51 @@ input[type="submit"]:hover {
   font-weight: bold;
   margin-top: 15px;
 }
+
+/* transactions.css */
+.transaction-form-container {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.transaction-form-header {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+}
+
+.transaction-form {
+  text-align: center;
+}
+
+.transaction-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-button {
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.back-link {
+  color: #007BFF;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
