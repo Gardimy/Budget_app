@@ -4,7 +4,6 @@ class CreateTransactions < ActiveRecord::Migration[7.0]
       t.integer :author_id
       t.string :name
       t.decimal :amount
-	  t.references :category, foreign_key: true
       t.integer :category_id
 
       t.timestamps
