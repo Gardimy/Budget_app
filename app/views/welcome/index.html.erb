@@ -1,23 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to GDM Budget_Smart</title>
+  <style>
+    body {
+      background-color: #ccc;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+	  text-shadow: 2px 2px 5px #172b4d;
+	  font-size: 50px;
+	  font-style: italic;
+	  color: #172b4d;
+    }
+
+	.btnlog {
+	  display: flex;
+	  flex-direction: column;
+	  text-decoration: none;
+	  margin-top: 100px;
+	}
+
+    .btn {
+      background-color: #ccc;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px;
+      display: inline-block;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+	 .btn2 {
+      background-color: #ccc;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px;
+      display: inline-block;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+	.btn2s {
+	  text-decoration: none;
+	  color: white;
+	  font-size: 20px;
+	}
+
+    .btn:hover {
+      background-color: #007BFF;
+    }
+
+	.btn2:hover {
+      background-color: #007BFF;
+    }
+  </style>
 </head>
-<body style="background-color: lightblue; font-family: Arial, sans-serif; text-align: center; padding: 20px;">
+<body>
 
-  <header style="background-color: #007BFF; color: white; padding: 20px;">
-    <h1>Welcome to GDM Budget_Smart</h1>
-  </header>
+  <h1>Snapscan</h1>
 
-  <div style="background-color: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
-    <p style="font-size: 18px;">GDM Budget_Smart is a web application where you can manage your budget.
-      You have a list of transactions associated with a category,
-      so that you can see how much money you spent and on what.</p>
+  <div class="btnlog">
+  <div class="btn">
+  <a class="btn2s href="<%= new_user_session_path %>">Log In</a>
   </div>
-
-  <div style="margin-top: 40px;">
-    <%= link_to 'Sign Up', new_user_registration_path, style: 'background-color: #007BFF; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;' %>
-    <%= link_to 'Log In', new_user_session_path, style: 'background-color: #007BFF; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-left: 10px;' %>
+  <div class="btn2">
+   <a class="btn2s" href="<%= new_user_registration_path %>">Sign Up</a>
+  </div>
   </div>
 
 </body>
