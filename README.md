@@ -56,7 +56,7 @@
 
 ### 🚀Live Demo <a name="Live Demo"></a>
 
-[Live](ghjj)
+[Live](https://gdm-budget-smart2.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
