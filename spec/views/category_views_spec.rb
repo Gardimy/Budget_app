@@ -9,12 +9,11 @@ RSpec.describe CategoriesController, type: :controller do
     )
   end
 
-  before(:each) do
-    allow_any_instance_of(User).to receive(:confirmed?).and_return(true)
-    sign_in user
-  end
-
   describe 'GET #index' do
+    before(:each) do
+      sign_in user
+    end
+
     it 'returns a successful response for categories of a specific user' do
       get :index
       expect(response).to have_http_status(:success)
@@ -27,6 +26,10 @@ RSpec.describe CategoriesController, type: :controller do
   end
 
   describe 'GET #new' do
+    before(:each) do
+      sign_in user
+    end
+
     it 'returns a successful response' do
       get :new
       expect(response).to have_http_status(:success)
@@ -39,6 +42,10 @@ RSpec.describe CategoriesController, type: :controller do
   end
 
   describe 'GET #welcome' do
+    before(:each) do
+      sign_in user
+    end
+
     it 'returns a successful response' do
       get :index
       expect(response).to render_template(:index)

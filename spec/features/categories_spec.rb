@@ -9,12 +9,11 @@ RSpec.describe 'Categories', type: :feature do
     )
   end
 
-  before(:each) do
-    allow_any_instance_of(User).to receive(:confirmed?).and_return(true)
-    sign_in user
-  end
-
   describe 'Category New Page' do
+    before(:each) do
+      sign_in user # Sign in the user here
+    end
+
     it 'allows the user to create a new category' do
       visit new_category_path
 
@@ -27,6 +26,10 @@ RSpec.describe 'Categories', type: :feature do
   end
 
   describe 'Category New Page' do
+    before(:each) do
+      sign_in user # Sign in the user here
+    end
+
     it 'allows the user to create a new category' do
       visit new_category_path
 

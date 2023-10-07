@@ -9,18 +9,15 @@ RSpec.describe CategoriesController, type: :controller do
     )
   end
 
-  before(:each) do
-    allow_any_instance_of(User).to receive(:confirmed?).and_return(true)
-    sign_in user
-  end
-
   describe 'GET #index' do
     it 'returns a successful response for categories of a specific user' do
+      sign_in user # Sign in the user here
       get :index
       expect(response).to have_http_status(:success)
     end
 
     it 'renders the index template' do
+      sign_in user # Sign in the user here
       get :index
       expect(response).to render_template(:index)
     end
@@ -28,11 +25,13 @@ RSpec.describe CategoriesController, type: :controller do
 
   describe 'GET #new' do
     it 'returns a successful response' do
+      sign_in user # Sign in the user here
       get :new
       expect(response).to have_http_status(:success)
     end
 
     it 'renders the new template' do
+      sign_in user # Sign in the user here
       get :new
       expect(response).to render_template(:new)
     end
@@ -40,11 +39,13 @@ RSpec.describe CategoriesController, type: :controller do
 
   describe 'GET #welcome' do
     it 'returns a successful response' do
+      sign_in user # Sign in the user here
       get :index
       expect(response).to render_template(:index)
     end
 
     it 'renders the welcome template' do
+      sign_in user # Sign in the user here
       get :index
       expect(response).to render_template(:index)
     end
