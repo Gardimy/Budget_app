@@ -7,7 +7,7 @@ body {
 
 nav {
   background-color: #007bff;
-  padding: 10px 0;
+  padding: 20px 10px;
 }
 
 nav ul {
@@ -130,15 +130,17 @@ form .links {
   text-decoration: underline;
 }
 
-.header {
+.categories-container {
+  padding: 20px;
+}
+
+.categories-container .header {
   background-color: #007bff;
   color: white;
   text-align: center;
-  padding: 10px 0;
-}
-
-.categories-container {
-  padding: 20px;
+  padding: 25px;
+  gap: 30px;
+  margin: 0;
 }
 
 .category-list {
@@ -192,8 +194,6 @@ form .links {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin: 20px auto;
-
-  /* display: block; */
   text-align: center;
 }
 
@@ -218,12 +218,6 @@ h1 {
 #selected_icon {
   margin-top: 10px;
 }
-
-/* Style the submit button */
-
-/* input[type="submit"]:hover {
-  background-color: #0056b3;
-} */
 
 /* transactions.css */
 .transactions-container {
