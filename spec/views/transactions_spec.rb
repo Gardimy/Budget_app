@@ -13,7 +13,7 @@ RSpec.describe TransactionsController, type: :controller do
     Category.create(
       name: 'Education',
       icon: 'imgexample.png',
-      user: user
+      user:
     )
   end
 
