@@ -92,5 +92,5 @@ production:
   database: budget_app
   username: postgres
   password: gardy
-  port: 5432
+  port: 5433
   localhost: localhost
