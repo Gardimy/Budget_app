@@ -220,8 +220,7 @@ h1 {
 .transactions-container {
   background-color: #fff;
   padding: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  width: 100%;
   border: 1px solid #fff;
   border-radius: 5px;
   margin-top: 20px;

@@ -1,3 +1,33 @@
+<% content_for :styles do %> 
+
+.new-category{
+    display: inline-block;
+    padding: 30px 0; 
+    background-color: green; 
+    color: white;
+    border-radius: 0;
+    font-weight: bold; cursor: 
+    pointer; transition:
+    background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+  }
+  .new-category-button {
+	padding: 10px 40px;
+	background-color: green;
+	color: white;
+	text-decoration: none;
+	border: 2px solid white; /* Add a white border */
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	text-align: center;
+  }
+     
+<% end %>
 <div class="transactions-container">
   <h1 class="category-header">
     <% if @category.icon.present? %>
@@ -31,7 +61,9 @@
 </div>
 </div>
 
-<%= link_to 'Add a new transaction', new_category_transaction_path(@category), class: 'new-category-button', style: 'display: inline-block; padding: 10px 0; background-color: green; color: white; text-decoration: none; border: 1px solid white; border-radius: 0; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease; width: 100%; text-align: center;' %>
-  <%= link_to 'Back', categories_path, class: 'back-link' %>
+<div class="new-category">
+  <%= link_to 'Add a new transaction', new_category_transaction_path(@category), class: 'new-category-button' %>
+</div>
+
 </div>
 </div>
