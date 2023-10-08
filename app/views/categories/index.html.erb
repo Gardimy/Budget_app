@@ -1,3 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Page Title</title>
+  <style>
+    .categories-container {
+      padding: 10px;
+    }
+
+    .categories-container .header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      margin: 0;
+    }
+
+    .category-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .category-card {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .category-image {
+      flex-shrink: 0;
+    }
+
+    .category-details {
+      display: flex;
+    }
+
+   
+.category-name-date {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+  }
+  
+  .category-name {
+	color: #000;
+	text-decoration: none;
+	font-size: medium;
+	font-weight: bold;
+	margin: 0;
+  }
+  
+  .category-date {
+	color: #8492a2;
+	font-size: smaller;
+	margin: 0;
+  }
+
+    .category-list {
+      list-style-type: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: grey;
+    }
+
+    .new-category-button {
+      display: inline-block;
+      padding: 10px 0; /* Adjust padding as needed */
+      background-color: green; /* Set the background color to green */
+      color: white; /* Set the text color to white */
+      text-decoration: none;
+      border: 1px solid white; /* Add a white border */
+      border-radius: 0; /* Remove border radius if present */
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%; /* Make the button 100% width */
+      text-align: center;
+    }
+
+    .new-category-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
 <div class="categories-container">
   <ul class="category-list">
     <% @categories.each do |category| %>
@@ -7,8 +100,13 @@
             <%= image_tag category.icon, alt: "Category icon" if category.icon.present? %>
           </div>
           <div class="category-details">
-            <h2><%= link_to category.name, category_path(category) %></h2>
-            <p>Total Amount: <%= number_to_currency(@total_amounts[category.id]) %></p>
+            <div class="category-name-date">
+              <h2><%= link_to category.name, category_path(category), class: 'category-name' %></h2>
+              <p class="category-date"><%= category.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
+            </div>
+            <div class="category-actions">
+              <p class="total-amount"><%= number_to_currency(@total_amounts[category.id]) %></p>
+            </div>
           </div>
         </div>
       </li>
@@ -16,3 +114,5 @@
   </ul>
   <%= link_to 'Add a new category', new_category_path, class: 'new-category-button' %>
 </div>
+</body>
+</html>

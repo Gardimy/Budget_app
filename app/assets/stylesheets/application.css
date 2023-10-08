@@ -130,24 +130,14 @@ form .links {
 }
 
 .categories-container {
-  padding: 20px;
+  padding: 10px;
 }
 
 .categories-container .header {
   background-color: #007bff;
   color: white;
   text-align: center;
-  padding: 25px;
-  gap: 30px;
   margin: 0;
-}
-
-.category-list {
-  list-style-type: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 20px;
 }
 
 .category-item {
@@ -160,39 +150,64 @@ form .links {
 .category-card {
   display: flex;
   align-items: center;
+  gap: 1em;
 }
 
 .category-image {
-  margin-right: 10px;
+  flex-shrink: 0;
 }
 
 .category-details {
-  text-align: left;
+  display: flex;
 }
 
-.category-details h2 {
-  margin: 0;
-  color: blueviolet;
+.category-name {
+  color: #000;
   text-decoration: none;
-  margin-top: 10px;
+  font-size: medium;
+  font-weight: bold;
+  margin: 0;
 }
 
-.category-actions {
-  margin-left: auto;
+.total-amount {
+  color: #8492a2;
+  font-size: 14px;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.category-date {
+  color: #8492a2;
+  font-size: smaller;
+  margin: 0;
+}
+
+.category-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: grey;
 }
 
 .new-category-button {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
+  padding: 10px 0; /* Adjust padding as needed */
+  background-color: green; /* Set the background color to green */
+  color: white; /* Set the text color to white */
   text-decoration: none;
-  border: none;
-  border-radius: 5px;
+  border: 1px solid white; /* Add a white border */
+  border-radius: 0; /* Remove border radius if present */
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin: 20px auto;
+  width: 100%; /* Make the button 100% width */
   text-align: center;
 }
 
