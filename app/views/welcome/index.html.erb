@@ -8,7 +8,6 @@
       background-color: #ccc;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 20px;
       margin: 0;
       display: flex;
       flex-direction: column;
@@ -16,24 +15,31 @@
       min-height: 100vh;
     }
 
+    .titre {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     h1 {
       text-align: center;
       margin-bottom: 40px;
-	  text-shadow: 2px 2px 5px #172b4d;
-	  font-size: 50px;
-	  font-style: italic;
-	  color: #172b4d;
+      text-shadow: 2px 2px 5px #172b4d;
+      font-size: 50px;
+      font-style: italic;
+      color: #172b4d;
     }
 
-	.btnlog {
-	  display: flex;
-	  flex-direction: column;
-	  text-decoration: none;
-	  margin-top: 100px;
-	}
+    .btnlog {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
 
     .btn {
-      background-color: #ccc;
+      background-color: #007BFF;
       color: white;
       padding: 10px 20px;
       text-decoration: none;
@@ -43,8 +49,8 @@
       transition: background-color 0.3s ease-in-out;
     }
 
-	 .btn2 {
-      background-color: #ccc;
+    .btn2 {
+      background-color: #007BFF;
       padding: 10px 20px;
       text-decoration: none;
       border-radius: 5px;
@@ -53,33 +59,24 @@
       transition: background-color 0.3s ease-in-out;
     }
 
-	.btn2s {
-	  text-decoration: none;
-	  color: white;
-	  font-size: 20px;
-	}
-
-    .btn:hover {
-      background-color: #007BFF;
-    }
-
-	.btn2:hover {
-      background-color: #007BFF;
+    .btn2s {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
-
+<div class="titre">
   <h1>Snapscan</h1>
-
-  <div class="btnlog">
+</div>
+<div class="btnlog">
   <div class="btn">
-  <a class="btn2s" href="<%= new_user_session_path %>">Log In</a>
+    <a class="btn2s" href="<%= new_user_session_path %>">Log In</a>
   </div>
   <div class="btn2">
-   <a class="btn2s" href="<%= new_user_registration_path %>">Sign Up</a>
+    <a class="btn2s" href="<%= new_user_registration_path %>">Sign Up</a>
   </div>
-  </div>
-
+</div>
 </body>
 </html>
