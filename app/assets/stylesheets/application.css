@@ -198,25 +198,6 @@ form .links {
   grid-gap: 20px;
 }
 
-.new-category-button {
-  display: inline-block;
-  padding: 10px 0; /* Adjust padding as needed */
-  background-color: green; /* Set the background color to green */
-  color: white; /* Set the text color to white */
-  text-decoration: none;
-  border: 1px solid white; /* Add a white border */
-  border-radius: 0; /* Remove border radius if present */
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%; /* Make the button 100% width */
-  text-align: center;
-}
-
-.new-category-button:hover {
-  background-color: #0056b3;
-}
-
 h1 {
   font-size: 24px;
   margin-bottom: 20px;
