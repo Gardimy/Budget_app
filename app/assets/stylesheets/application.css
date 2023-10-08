@@ -37,6 +37,12 @@ nav ul li a {
   text-align: center;
 }
 
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: grey;
+}
+
 form h2 {
   text-align: center;
   color: blueviolet;
@@ -72,7 +78,8 @@ form .field {
 form input[type="email"],
 form input[type="password"] {
   width: 100%;
-  /*padding: 10px;*/
+
+  /* padding: 10px; */
   border: 1px solid #ccc;
   border-radius: 3px;
   font-size: 16px;
@@ -85,7 +92,8 @@ form .actions {
 input[type="submit"] {
   background-color: #007bff;
   color: #fff;
-  /*padding: 10px 20px;*/
+
+  /* padding: 10px 20px; */
   border: none;
   cursor: pointer;
   font-weight: bold;
@@ -190,12 +198,6 @@ form .links {
   grid-gap: 20px;
 }
 
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: grey;
-}
-
 .new-category-button {
   display: inline-block;
   padding: 10px 0; /* Adjust padding as needed */
@@ -261,13 +263,6 @@ h1 {
   list-style: none;
   border-bottom: 1px solid #ccc;
   padding-bottom: 20px;
-}
-
-.total-amount {
-  font-weight: bold;
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
 }
 
 .amount {
@@ -345,16 +340,6 @@ h1 {
 
 .transaction-meta {
   text-align: right;
-}
-
-.add-transaction-link {
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-right: 10px;
-  display: inline-block;
 }
 
 .back-link {

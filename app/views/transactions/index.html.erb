@@ -1,12 +1,15 @@
 <div class="transaction-details-container">
-  <h1 class="transaction-details-header">
-    <%= @category.name %> Transactions
-  </h1>
-  
-  <p class="total-amount">
-    Total Amount: <%= number_to_currency(@total_amount) %>
-  </p>
-  
+<h1 class="transaction-details-header">
+<%= @category.name %> Transactions
+</h1>
+
+<div class="category-image">
+<%= image_tag @category.icon, alt: "Category icon" if @category.icon.present? %>
+</div>
+
+<p class="total-amount">
+Total Amount: <%= number_to_currency(@total_amount) %>
+</p>
   <ul class="transaction-list">
     <% @transactions.each do |transaction| %>
       <li class="transaction-item">
@@ -22,7 +25,7 @@
   </ul>
 
   <div class="transaction-links">
-    <%= link_to 'Add a new transaction', new_category_transaction_path(@category), class: "add-transaction-link" %>
+  <%= link_to 'Add a new transaction', new_category_transaction_path(@category), style: 'display: inline-block; padding: 10px 0; background-color: green; color: white; text-decoration: none; border: 1px solid white; border-radius: 0; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease; width: 100%; text-align: center;', class: 'new-category-button' %>
     <%= link_to 'Back', categories_path, class: "back-link6" %>
   </div>
 </div>

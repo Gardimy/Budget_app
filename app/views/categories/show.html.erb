@@ -29,6 +29,6 @@
    <%= number_to_currency(@total_amount) %></p>
 </div>
 </div>
-  <%= link_to 'Add a new transaction', new_category_transaction_path(@category), class: 'new-category-button' %>
+<%= link_to 'Add a new transaction', new_category_transaction_path(@category), class: 'new-category-button', style: 'display: inline-block; padding: 10px 0; background-color: green; color: white; text-decoration: none; border: 1px solid white; border-radius: 0; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease; width: 100%; text-align: center;' %>
   <%= link_to 'Back', categories_path, class: 'back-link' %>
 </div>
