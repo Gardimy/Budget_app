@@ -28,9 +28,9 @@ nav ul li a {
 }
 
 .form-container {
-  max-width: 400px;
+  width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1px 1px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -52,7 +52,6 @@ form h2 {
 form {
   max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
