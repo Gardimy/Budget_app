@@ -8,9 +8,37 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-  </head>
 
+    <style> 
+      nav ul {
+        display: flex;
+        justify-content: space-between;
+      }
+      nav ul a {
+        text-decoration: none;
+      }
+
+      .back-lin {
+             color: white;
+            font-size: 24px;
+      }
+            
+
+      <%= yield(:styles) %>
+    </style>
+
+  </head>
   <body>
+    <% if user_signed_in? %>
+      <nav>
+        <ul>
+          <%= link_to '<', categories_path, class: 'back-lin' %>
+          <li class="sign_out"><%= link_to 'Sign out', custom_destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

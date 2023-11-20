@@ -1,15 +1,368 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ccc;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #007bff;
+  padding: 20px 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: bisque;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.form-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1px 1px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: grey;
+}
+
+form h2 {
+  text-align: center;
+  color: blueviolet;
+  margin-bottom: 20px;
+}
+
+.form-container h2 {
+  color: blueviolet;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-weight: bold;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+form .field {
+  margin-bottom: 20px;
+}
+
+form input[type="email"],
+form input[type="password"] {
+  width: 100%;
+
+  /* padding: 10px; */
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+form .actions {
+  text-align: center;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+
+  /* padding: 10px 20px; */
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+form .actions input[type="submit"] {
+  background-color: blueviolet;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+form .field input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+form .links {
+  text-align: center;
+}
+
+.footer-links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: blueviolet;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.categories-container {
+  padding: 10px;
+}
+
+.categories-container .header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+.category-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.category-card {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.category-image {
+  flex-shrink: 0;
+}
+
+.category-details {
+  display: flex;
+}
+
+.category-name {
+  color: #000;
+  text-decoration: none;
+  font-size: medium;
+  font-weight: bold;
+  margin: 0;
+}
+
+.total-amount {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 28px;
+}
+
+.category-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+#icon-select {
+  width: 100%;
+  padding: 10px;
+}
+
+#selected_icon {
+  margin-top: 10px;
+}
+
+/* transactions.css */
+.transactions-container {
+  background-color: #fff;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.category-header {
+  display: flex;
+}
+
+.category-header1 img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 10px;
+}
+
+.transaction-item {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 10px;
+  list-style: none;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.amount {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* transactions.css */
+.transaction-form-container {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.transaction-form-header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+}
+
+.transaction-form {
+  text-align: center;
+}
+
+.transaction-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+/* transactions.css */
+.transaction-details-container {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.transaction-details-header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+}
+
+.transaction-list {
+  list-style: none;
+  padding: 0;
+}
+
+.transaction-info {
+  flex-grow: 1;
+}
+
+.transaction-meta {
+  text-align: right;
+}
+
+.back-link {
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.category-title {
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+}
+
+.category-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.selected-icon {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}

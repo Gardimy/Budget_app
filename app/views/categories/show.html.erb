@@ -1,0 +1,69 @@
+<% content_for :styles do %> 
+
+.new-category{
+    display: inline-block;
+    padding: 30px 0; 
+    background-color: green; 
+    color: white;
+    border-radius: 0;
+    font-weight: bold; cursor: 
+    pointer; transition:
+    background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+  }
+  .new-category-button {
+	padding: 10px 40px;
+	background-color: green;
+	color: white;
+	text-decoration: none;
+	border: 2px solid white; /* Add a white border */
+	border-radius: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	text-align: center;
+  }
+     
+<% end %>
+<div class="transactions-container">
+  <h1 class="category-header">
+    <% if @category.icon.present? %>
+      <%= image_tag @category.icon, alt: "Category icon" %>
+    <% end %>
+    <%= @category.name %>
+  </h1>
+  
+  <ul>
+    <% @transactions.each do |transaction| %>
+      <li class="transaction-item">
+        <div>
+          <%= transaction.name %> - Amount: <%= number_to_currency(transaction.amount) %>
+        </div>
+		<div>
+		Transaction ID: <%= transaction.id %>
+	  </div>
+        <div class="transaction-date">
+          Transaction Date: <%= transaction.created_at %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<div class="total-amount">
+  <div class="total">
+  <p>Total Amount:
+  </div>
+  <div class="amount">
+   <%= number_to_currency(@total_amount) %></p>
+</div>
+</div>
+</div>
+
+<div class="new-category">
+  <%= link_to 'Add a new transaction', new_category_transaction_path(@category), class: 'new-category-button' %>
+</div>
+
+</div>
+</div>

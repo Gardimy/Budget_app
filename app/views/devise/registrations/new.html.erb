@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - GDM Budget_Smart</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 1px 1px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	  margin-top: 0;
+	  padding-top: 0;
+    }
+
+    .form-header {
+      background-color: #007BFF;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 24px;
+      padding: 10px 0;
+	  margin: 10px 0;
+	  height: 50px;
+    }
+
+    .back-button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .next-button {
+      background: none;
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    .field input[type="text"],
+    .field input[type="email"],
+    .field input[type="password"],
+    .field input[type="file"] {
+      width: 90%;
+      padding: 20px;
+      border: 2px solid white;
+      background-color: #f9f9f9;
+      font-size: 16px;
+    }
+
+    .field input[type="file"]::placeholder {
+      text-align: center;
+    }
+
+    .upload-picture {
+      margin-bottom: 20px;
+    }
+
+    .upload-picture label {
+      background-color: #f9f9f9;
+      width: 90%;
+      color: grey;
+      cursor: pointer;
+      padding: 20px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .upload-picture label::before {
+      content: '\1F464';
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    .actions input[type="submit"] {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .actions input[type="submit"] {
+      display: none;
+    }
+
+	.login {
+	  display: none;	
+	}
+  </style>
+</head>
+<body>
+
+<h1 class="form-header">
+  <a href="/" class="back-button">&lt;</a>
+  REGISTER
+  <button class="next-button" id="nextButton">Next</button>
+</h1>
+
+<div class="form-container">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field upload-picture">
+      <label for="imageInput" class="upload">Upload Picture</label>
+      <%= f.file_field :profile_picture, id: 'imageInput', style: 'display: none;' %>
+      <img id="previewImage" src="#" alt="Preview Image" style="display: none;" />
+    </div>
+
+    <div class="field">
+      <%= f.text_field :full_name, autofocus: true, autocomplete: "name", placeholder: "Full Name" %>
+      <%= f.email_field :email, autocomplete: "email", placeholder: "Email" %>
+      <% if @minimum_password_length %>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password" %>
+    </div>
+
+    <div class="actions">
+      <input type="submit" value="Sign up" id="submitButton">
+    </div>
+  <% end %>
+</div>
+<script>
+
+document.getElementById("nextButton").addEventListener("click", function () {
+  // Submit the form when the Next button is clicked
+  document.getElementById("submitButton").click();
+});
+
+const imageInput = document.getElementById("imageInput");
+const previewImage = document.getElementById("previewImage");
+
+imageInput.addEventListener("change", function () {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      previewImage.src = e.target.result;
+      previewImage.style.display = "block";
+    };
+
+    reader.readAsDataURL(file);
+  } else {
+    previewImage.src = "#";
+    previewImage.style.display = "none";
+  }
+});
+</script>
+</body>
+</html>

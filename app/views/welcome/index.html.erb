@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to GDM Budget_Smart</title>
+  <style>
+    body {
+      background-color: #ccc;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+    }
+
+    .titre {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 5px #172b4d;
+      font-size: 50px;
+      font-style: italic;
+      color: #172b4d;
+    }
+
+    .btnlog {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px;
+      display: inline-block;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn2 {
+      background-color: #007BFF;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px;
+      display: inline-block;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn2s {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="titre">
+  <h1>Snapscan</h1>
+</div>
+<div class="btnlog">
+  <div class="btn">
+    <a class="btn2s" href="<%= new_user_session_path %>">Log In</a>
+  </div>
+  <div class="btn2">
+    <a class="btn2s" href="<%= new_user_registration_path %>">Sign Up</a>
+  </div>
+</div>
+</body>
+</html>

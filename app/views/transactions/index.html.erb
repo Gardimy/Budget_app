@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Your Page Title</title>
+  <style>
+  body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+  }
+
+  .categories-container {
+	padding: 10px;
+	flex-grow: 1;
+  }
+
+  .categories-container .header {
+	background-color: #007bff;
+	color: white;
+	text-align: center;
+	margin: 0;
+  }
+
+  .new-category-button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      background-color: green;
+    }
+
+    .new-category-button {
+      padding: 20px 40px;
+      background-color: green;
+      color: white;
+      text-decoration: none;
+      border: 2px solid white;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .new-category-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  </head>
+  <body>
+<div class="transaction-details-container">
+<h1 class="transaction-details-header">
+<%= @category.name %> Transactions
+</h1>
+
+<div class="category-image">
+<%= image_tag @category.icon, alt: "Category icon" if @category.icon.present? %>
+</div>
+
+<p class="total-amount">
+Total Amount: <%= number_to_currency(@total_amount) %>
+</p>
+  <ul class="transaction-list">
+    <% @transactions.each do |transaction| %>
+      <li class="transaction-item">
+        <div class="transaction-info">
+          <%= transaction.name %> - Amount: <%= number_to_currency(transaction.amount) %>
+        </div>
+        <div class="transaction-meta">
+          Transaction ID: <%= transaction.id %><br>
+          Transaction Date: <%= transaction.created_at %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  </div>
+  <div class="new-category-button-container">
+  <%= link_to 'Add a new transaction', new_category_transaction_path(@category), class: 'new-category-button' %>
+</div>
+  </div>
+</div>
+</body>
+</html>
