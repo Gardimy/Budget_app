@@ -185,12 +185,6 @@ form .links {
   font-weight: bold;
 }
 
-.category-date {
-  color: #8492a2;
-  font-size: smaller;
-  margin: 0;
-}
-
 .category-list {
   list-style-type: none;
   padding: 0;
@@ -248,7 +242,7 @@ h1 {
 
 .amount {
   font-weight: bold;
-  margin-top: 15px;
+  /*margin-top: 15px;*/
 }
 
 /* transactions.css */
