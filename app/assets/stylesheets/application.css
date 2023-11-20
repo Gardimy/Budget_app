@@ -178,10 +178,11 @@ form .links {
 }
 
 .total-amount {
-  color: #8492a2;
-  font-size: 14px;
-  white-space: nowrap;
-  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  text-align: left;
+  font-weight: bold;
 }
 
 .category-date {
