@@ -59,14 +59,6 @@
       margin: 0;
     }
 
-	.to {
-		color: black;
-		font-size: 14px;
-		font-weight: bold;
-		white-space: nowrap;
-		margin-left: 10px;
-	  }	  
-
     .category-date {
       color: #8492a2;
       font-size: smaller;
@@ -81,10 +73,6 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       grid-gap: 20px;
     }
-
-	.cat {
-	  margin-top: 10px;
-	}
 
     h2 {
       font-size: 24px;
@@ -132,8 +120,8 @@
               <h2><%= link_to category.name, category_path(category), class: 'category-name' %></h2>
               <p class="category-date"><%= category.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
             </div>
-            <div class="category-actions cat">
-              <p class="total-amount to"><%= number_to_currency(@total_amounts[category.id]) %></p>
+            <div class="category-actions">
+              <p class="total-amount"><%= number_to_currency(@total_amounts[category.id]) %></p>
             </div>
           </div>
         </div>

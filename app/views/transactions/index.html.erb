@@ -3,24 +3,25 @@
 <head>
   <title>Your Page Title</title>
   <style>
-
   body {
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      padding: 0;
-    }
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+  }
 
-    .categories-container {
-      flex-grow: 1;
-    }
+  .categories-container {
+	padding: 10px;
+	flex-grow: 1;
+  }
 
-	.categories-container .header {
-      background-color: #007bff;
-      color: white;
-      text-align: center;
-      margin: 0;
-    }
+  .categories-container .header {
+	background-color: #007bff;
+	color: white;
+	text-align: center;
+	margin: 0;
+  }
 
   .new-category-button-container {
       display: flex;
@@ -77,6 +78,8 @@ Total Amount: <%= number_to_currency(@total_amount) %>
   </div>
   <div class="new-category-button-container">
   <%= link_to 'Add a new transaction', new_category_transaction_path(@category), class: 'new-category-button' %>
+</div>
+  </div>
 </div>
 </body>
 </html>
