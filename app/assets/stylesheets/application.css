@@ -183,6 +183,7 @@ form .links {
   color: black;
   text-align: left;
   font-weight: bold;
+  margin-top: 20px;
 }
 
 .category-list {
@@ -242,7 +243,7 @@ h1 {
 
 .amount {
   font-weight: bold;
-  /*margin-top: 15px;*/
+  margin-top: 15px;
 }
 
 /* transactions.css */
