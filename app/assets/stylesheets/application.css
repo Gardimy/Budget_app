@@ -169,6 +169,7 @@ form .links {
 .category-details {
   display: flex;
   justify-content: space-between;
+  align-content: center;
 }
 
 .category-name-date {
@@ -186,7 +187,7 @@ form .links {
 }
 
 .total-amount {
-  color: #8492a2;
+  color: black;
   font-size: 14px;
   white-space: nowrap;
   margin-left: 10px;
