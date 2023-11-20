@@ -1,136 +1,136 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Your Page Title</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      margin: 0;
-      padding: 0;
-    }
+#<!DOCTYPE html>
+#<html>
+#<head>
+#  <title>Your Page Title</title>
+#  <style>
+#    body {
+#      display: flex;
+#      flex-direction: column;
+#      min-height: 100vh;
+#      margin: 0;
+#      padding: 0;
+#    }
 
-    .categories-container {
-      padding: 10px;
-      flex-grow: 1;
-    }
+#    .categories-container {
+#      padding: 10px;
+#      flex-grow: 1;
+#    }
 
-    .categories-container .header {
-      background-color: #007bff;
-      color: white;
-      text-align: center;
-      margin: 0;
-    }
+#    .categories-container .header {
+#      background-color: #007bff;
+#      color: white;
+#      text-align: center;
+#      margin: 0;
+#    }
 
-    .category-item {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      padding: 10px;
-    }
+#    .category-item {
+#      background-color: #fff;
+#      border: 1px solid #ddd;
+#      border-radius: 5px;
+#      padding: 10px;
+#    }
 
-    .category-card {
-      display: flex;
-      align-items: center;
-      gap: 1em;
-    }
+#    .category-card {
+#      display: flex;
+#      align-items: center;
+#      gap: 1em;
+#    }
 
-    .category-image {
-      flex-shrink: 0;
-    }
+#    .category-image {
+#      flex-shrink: 0;
+#    }
 
-    .category-details {
-      display: flex;
-	  justify-content: space-between;
-    }
+#    .category-details {
+#      display: flex;
+#	  justify-content: space-between;
+#    }
 
-    .category-name-date {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+#    .category-name-date {
+#      display: flex;
+#      flex-direction: column;
+#      align-items: flex-start;
+#    }
 
-    .category-name {
-      color: #ccc;
-      text-decoration: none;
-      font-size: medium;
-      font-weight: bold;
-      margin: 0;
-    }
+#    .category-name {
+#      color: #ccc;
+#      text-decoration: none;
+#      font-size: medium;
+#      font-weight: bold;
+#      margin: 0;
+#    }
 
-    .category-date {
-      color: #8492a2;
-      font-size: smaller;
-      margin: 0;
-	  margin-top: 10px;
-    }
+#    .category-date {
+#      color: #8492a2;
+#      font-size: smaller;
+#      margin: 0;
+#	  margin-top: 10px;
+#    }
 
-    .category-list {
-      list-style-type: none;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-gap: 20px;
-    }
+#    .category-list {
+#      list-style-type: none;
+#      padding: 0;
+#      display: grid;
+#      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+#      grid-gap: 20px;
+#    }
 
-    h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: grey;
-    }
+#    h2 {
+#      font-size: 24px;
+#      margin-bottom: 20px;
+#      color: grey;
+#    }
 
-    .new-category-button-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100px;
-      background-color: green;
-    }
+#    .new-category-button-container {
+#      display: flex;
+#      justify-content: center;
+#      align-items: center;
+#      height: 100px;
+#      background-color: green;
+#    }
 
-    .new-category-button {
-      padding: 20px 40px;
-      background-color: green;
-      color: white;
-      text-decoration: none;
-      border: 2px solid white;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-align: center;
-    }
+#    .new-category-button {
+#      padding: 20px 40px;
+#      background-color: green;
+#      color: white;
+#      text-decoration: none;
+#      border: 2px solid white;
+#      border-radius: 5px;
+#      font-weight: bold;
+#      cursor: pointer;
+#      transition: background-color 0.3s ease;
+#      text-align: center;
+#    }
 
-    .new-category-button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-</head>
-<body>
-<div class="categories-container">
-  <ul class="category-list">
-    <% @categories.each do |category| %>
-      <li class="category-item">
-        <div class="category-card">
-          <div class="category-image">
-            <%= image_tag category.icon, alt: "Category icon" if category.icon.present? %>
-          </div>
-          <div class="category-details">
-            <div class="category-name-date">
-              <h2><%= link_to category.name, category_path(category), class: 'category-name' %></h2>
-              <p class="category-date"><%= category.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
-            </div>
-            <div class="category-actions">
-              <p class="total-amount"><%= number_to_currency(@total_amounts[category.id]) %></p>
-            </div>
-          </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-</div>
-<div class="new-category-button-container">
-  <%= link_to 'Add a new category', new_category_path, class: 'new-category-button' %>
-</div>
-</body>
-</html>
+#    .new-category-button:hover {
+#      background-color: #0056b3;
+#    }
+#  </style>
+#</head>
+#<body>
+#<div class="categories-container">
+#  <ul class="category-list">
+#    <% @categories.each do |category| %>
+#      <li class="category-item">
+#        <div class="category-card">
+#          <div class="category-image">
+#            <%= image_tag category.icon, alt: "Category icon" if category.icon.present? %>
+#          </div>
+#          <div class="category-details">
+#            <div class="category-name-date">
+#              <h2><%= link_to category.name, category_path(category), class: 'category-name' %></h2>
+#              <p class="category-date"><%= category.created_at.strftime("%Y-%m-%d %H:%M:%S") %></p>
+#            </div>
+#            <div class="category-actions">
+#              <p class="total-amount"><%= number_to_currency(@total_amounts[category.id]) %></p>
+#            </div>
+#          </div>
+#        </div>
+#      </li>
+#    <% end %>
+#  </ul>
+#</div>
+#<div class="new-category-button-container">
+#  <%= link_to 'Add a new category', new_category_path, class: 'new-category-button' %>
+#</div>
+#</body>
+#</html>
