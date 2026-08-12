@@ -1,18 +1,25 @@
 Rails.application.routes.draw do
-	devise_for :users
-  # Redirect authenticated users to the categories#index page
+  devise_for :users
+
+  # Custom sign out
   devise_scope :user do
-    get "/custom_sign_out" => "devise/sessions#destroy", as: :custom_destroy_user_session
+    get "/custom_sign_out" => "devise/sessions#destroy",
+        as: :custom_destroy_user_session
   end
 
+  # Authenticated users
   authenticated :user do
-    root 'categories#index', as: :authenticated_root
+    root "categories#index", as: :authenticated_root
   end
 
-  # For non-authenticated users, show the welcome#index page
-  root 'welcome#index'
+  # Non-authenticated users
+  root "welcome#index"
 
+  # Categories and transactions
   resources :categories do
     resources :transactions
   end
+
+  # Rails health check for Render
+  get "/up" => "rails/health#show", as: :rails_health_check
 end
